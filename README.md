@@ -31,7 +31,7 @@ An array containing preexisting tags for the input. Bind to this to keep your ar
 <TagInput bind:tags={myTags}>
 ```
 
-### color={function}
+### colour={function}
 
 A function which takes the tag content as the only parameter and uses it to generate a CSS colour. The default function creates a hashcode from the tag content and creates a pastel colour based on it.
 
