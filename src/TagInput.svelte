@@ -78,7 +78,7 @@
 	import { flip } from 'svelte/animate'
 	
 	export let delimiter = ','
-	export let tags = new Set([])
+	export let tags = []
 	export let colour = (tag) => {
 	  if (tag.length <= 0) { return 0 }
 	  let h = 0
@@ -92,14 +92,15 @@
 	let current = ''
 	
 	function parseInput () {
-	  current.split(delimiter).forEach(addTag)
+		const tagSet = new Set(tags)
+		current
+			.split(delimiter)
+			.forEach(t => {
+				const clean = t && t.trim()
+	  		clean && clean !== '' && tagSet.add(t)
+			})
 	  current = ''
-	  tags = tags
-	}
-	
-	function addTag (tag) {
-	  const clean = tag && tag.trim()
-	  clean && clean !== '' && tags.add(tag)
+	  sync(tagSet)
 	}
 	
 	function handleInput ({ key, code }) {
@@ -107,7 +108,12 @@
 	}
 	
 	function removeTag (tag) {
-	  tags.delete(tag)
-	  tags = tags
+		const tagSet = new Set(tags)
+	  tagSet.delete(tag)
+	  sync(tagSet)
+	}
+
+	function sync (tagSet) {
+		tags = [ ...tagSet ]
 	}
 </script>

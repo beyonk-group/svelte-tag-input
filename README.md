@@ -1,24 +1,40 @@
-# New Project
+<p align="center">
+  <img width="186" height="90" src="https://user-images.githubusercontent.com/218949/44782765-377e7c80-ab80-11e8-9dd8-fce0e37c235b.png" alt="Beyonk" />
+</p>
 
-> ✨ Bootstrapped with Create Snowpack App (CSA).
+## Beyonk Tag Input
 
-## Available Scripts
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com) [![svelte-v3](https://img.shields.io/badge/svelte-v3-blueviolet.svg)](https://svelte.dev) ![publish](https://github.com/beyonk-adventures/svelte-tag-input/workflows/publish/badge.svg)
 
-### npm start
 
-Runs the app in the development mode.
-Open http://localhost:8080 to view it in the browser.
+## Usage
 
-The page will reload if you make edits.
-You will also see any lint errors in the console.
+Installation:
 
-### npm run build
+```bash
+npm i -D @beyonk/svelte-tag-input
+```
 
-Builds a static copy of your site to the `build/` folder.
-Your app is ready to be deployed!
+## Props
 
-**For the best production performance:** Add a build bundler plugin like [@snowpack/plugin-webpack](https://github.com/snowpackjs/snowpack/tree/main/plugins/plugin-webpack) or [snowpack-plugin-rollup-bundle](https://github.com/ParamagicDev/snowpack-plugin-rollup-bundle) to your `snowpack.config.json` config file.
+There are a couple of properties you can pass to the tag input:
 
-### Q: What about Eject?
+### tags
 
-No eject needed! Snowpack guarantees zero lock-in, and CSA strives for the same.
+An array containing preexisting tags for the input. Bind to this to keep your array up to date with changes:
+
+```svelte
+<script>
+  let myTags = [ 'foo', 'bar' ]
+</script>
+
+<TagInput bind:tags={myTags}>
+```
+
+### color={function}
+
+A function which takes the tag content as the only parameter and uses it to generate a CSS colour. The default function creates a hashcode from the tag content and creates a pastel colour based on it.
+
+### delimiter
+
+The delimiter which, when pressed, will create a new tag from the current content. Duplicate tags are not added.
