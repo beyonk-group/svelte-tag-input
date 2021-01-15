@@ -2,15 +2,22 @@
   "scripts": {
     "start": "snowpack dev",
     "build": "snowpack build",
+    "lint": "eslint src",
     "test": "echo \"This template does not include a test runner by default.\" && exit 1"
   },
   "svelte": "src/TagInput.svelte",
   "devDependencies": {
+    "@beyonk/eslint-config": "^4.2.0",
     "@snowpack/plugin-svelte": "^3.5.1",
+    "eslint": "^7.17.0",
+    "eslint-plugin-svelte3": "^3.0.0",
     "snowpack": "^3.0.1",
     "tinro": "^0.5.6"
   },
   "dependencies": {
     "svelte": "^3.31.2"
+  },
+  "eslintConfig": {
+    "extends": "@beyonk/eslint-config/svelte"
   }
 }

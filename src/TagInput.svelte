@@ -80,34 +80,34 @@
 	export let delimiter = ','
 	export let tags = new Set([])
 	export let colour = (tag) => {
-		if ( tag.length <= 0 ) { return 0 }
-		let h = 0
-		let i = 0
-		while (i < tag.length) {
-			h = (h << 5) - h + tag.charCodeAt(i++) | 0
-		}
-		return 'hsl(' + (h / 360) + ', 100%, 80%)'
+	  if (tag.length <= 0) { return 0 }
+	  let h = 0
+	  let i = 0
+	  while (i < tag.length) {
+	    h = (h << 5) - h + tag.charCodeAt(i++) | 0
+	  }
+	  return 'hsl(' + (h / 360) + ', 100%, 80%)'
 	}
 	
 	let current = ''
 	
 	function parseInput () {
-		current.split(delimiter).forEach(addTag)
-		current = ''
-		tags = tags
+	  current.split(delimiter).forEach(addTag)
+	  current = ''
+	  tags = tags
 	}
 	
 	function addTag (tag) {
-		const clean = tag && tag.trim()
-		clean && clean !== '' && tags.add(tag)
+	  const clean = tag && tag.trim()
+	  clean && clean !== '' && tags.add(tag)
 	}
 	
 	function handleInput ({ key, code }) {
-		(key === delimiter || code === 'Enter') && parseInput()
+	  (key === delimiter || code === 'Enter') && parseInput()
 	}
 	
 	function removeTag (tag) {
-		tags.delete(tag)
-		tags = tags
+	  tags.delete(tag)
+	  tags = tags
 	}
 </script>
