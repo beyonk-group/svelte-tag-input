@@ -92,13 +92,13 @@
 	let current = ''
 	
 	function parseInput () {
-		const tagSet = new Set(tags)
-		current
-			.split(delimiter)
-			.forEach(t => {
-				const clean = t && t.trim()
-	  		clean && clean !== '' && tagSet.add(t)
-			})
+	  const tagSet = new Set(tags)
+	  current
+	    .split(delimiter)
+	    .forEach(t => {
+	      const clean = t && t.trim()
+	      clean && clean !== '' && tagSet.add(t)
+	    })
 	  current = ''
 	  sync(tagSet)
 	}
@@ -108,12 +108,12 @@
 	}
 	
 	function removeTag (tag) {
-		const tagSet = new Set(tags)
+	  const tagSet = new Set(tags)
 	  tagSet.delete(tag)
 	  sync(tagSet)
 	}
 
 	function sync (tagSet) {
-		tags = [ ...tagSet ]
+	  tags = [ ...tagSet ]
 	}
 </script>
