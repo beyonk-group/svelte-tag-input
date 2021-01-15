@@ -4,7 +4,13 @@
     "build": "snowpack build",
     "test": "echo \"This template does not include a test runner by default.\" && exit 1"
   },
+  "svelte": "src/TagInput.svelte",
   "devDependencies": {
-    "snowpack": "^3.0.1"
+    "@snowpack/plugin-svelte": "^3.5.1",
+    "snowpack": "^3.0.1",
+    "tinro": "^0.5.6"
+  },
+  "dependencies": {
+    "svelte": "^3.31.2"
   }
 }
