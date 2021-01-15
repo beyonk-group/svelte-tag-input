@@ -36,7 +36,7 @@
 				</div>
 			</div>
 			<div class="col-lg-2 col-md-3 col-xs-12 right">
-				<a class="btn" href="http://www.github.com/beyonk-adventures/svelte-datepicker">Github</a>
+				<a class="btn" href="http://www.github.com/beyonk-adventures/svelte-tag-input">Github</a>
 			</div>
 		</div>
 	</div>
