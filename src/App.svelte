@@ -94,7 +94,7 @@
   import './prettify.css'
   import './style.css'
 
-  const tags = new [ 'foo', 'bar', 'baz' ]()
+  const tags = [ 'foo', 'bar', 'baz' ]
 </script>
 
 <style>
