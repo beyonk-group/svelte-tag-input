@@ -26,6 +26,10 @@
 		padding: 3px 0;
 		width: 100%;
 	}
+
+	input:focus {
+		outline: 0;
+	}
 	
 	ul {
 		list-style-type: none;
@@ -33,6 +37,7 @@
 		padding: 0;
 		margin: 0;
 		flex-wrap: wrap;
+		flex: 1;
 	}
 	
 	li {
@@ -51,6 +56,7 @@
 		padding: 0;
 		width: 100%;
     flex: 1;
+		border: 0;
 	}
 	
 	li span {
