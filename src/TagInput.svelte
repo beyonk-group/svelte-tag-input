@@ -1,24 +1,24 @@
-<div>
-	<ul>
+<div class="tag-input">
+	<ul class="tag-list">
 		{#each [ ...tags.values() ] as tag (tag)}
-		<li animate:flip={{ duration: 200 }} style="background-color: {colour(tag)};">
+		<li class="tag" animate:flip={{ duration: 200 }} style="background-color: {colour(tag)};">
 			<span>{tag}</span>
-			<button on:click={() => removeTag(tag)}>⨯</button></li>
+			<button class="remove-button" on:click={() => removeTag(tag)}>⨯</button></li>
 		{/each}
 		<li class="input">
-			<input type="text" on:keyup={handleInput} on:blur={parseInput} bind:value={current} />
+			<input class="tag-entry" type="text" on:keyup={handleInput} on:blur={parseInput} bind:value={current} />
 		</li>
 	</ul>
 </div>
 
 <style>
-	div {
+	.tag-input {
 		display: flex;
 		border: 1px solid grey;
 		flex-wrap: wrap;
 	}
 	
-	input {
+	.tag-entry {
 		border: 0;
 		outline: 0;
 		display: flex;
@@ -27,11 +27,11 @@
 		width: 100%;
 	}
 
-	input:focus {
+	.tag-entry:focus {
 		outline: 0;
 	}
 	
-	ul {
+	.tag-list {
 		list-style-type: none;
 		display: flex;
 		padding: 0;
@@ -40,7 +40,7 @@
 		flex: 1;
 	}
 	
-	li {
+	.tag {
 		border-radius: 5px;
 		padding: 6px;
 		margin: 3px;
@@ -50,7 +50,7 @@
 		white-space: nowrap;
 	}
 
-	li.input {
+	.input {
 		background: transparent;
 		margin: 0;
 		padding: 0;
@@ -59,11 +59,11 @@
 		border: 0;
 	}
 	
-	li span {
+	.tag span {
 		line-height: inherit;
 	}
 	
-	button {
+	.remove-button {
 		border: 0;
 		outline: 0;
 		background-color: transparent;
@@ -74,7 +74,7 @@
     color: inherit;
 	}
 
-  button:hover {
+  .remove-button:hover {
     transition: color 0.2s ease-in-out;
     color: white;
   }
